@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-sans: 'DM Sans', sans-serif;
+    --font-display: 'Playfair Display', serif;
+
+    /* Warm, premium light mode */
+    --background: 45 29% 97%; /* #FAF9F6 off-white */
+    --foreground: 0 0% 10%;   /* #1A1A1A dark charcoal */
+    
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 10%;
+    
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 10%;
+    
+    /* Rich terracotta / burnt orange */
+    --primary: 15 65% 50%;
+    --primary-foreground: 0 0% 100%;
+    
+    --secondary: 40 15% 90%;
+    --secondary-foreground: 0 0% 15%;
+    
+    --muted: 40 10% 92%;
+    --muted-foreground: 0 0% 40%;
+    
+    --accent: 43 74% 49%; /* Gold */
+    --accent-foreground: 0 0% 10%;
+    
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 40 10% 85%;
+    --input: 40 10% 85%;
+    --ring: 15 65% 50%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    /* Moody, elegant dark mode */
+    --background: 0 0% 6%; /* #0F0F0F */
+    --foreground: 45 29% 97%; /* Off-white */
+    
+    --card: 0 0% 9%;
+    --card-foreground: 45 29% 97%;
+    
+    --popover: 0 0% 9%;
+    --popover-foreground: 45 29% 97%;
+    
+    --primary: 15 55% 55%;
+    --primary-foreground: 0 0% 100%;
+    
+    --secondary: 0 0% 15%;
+    --secondary-foreground: 45 29% 97%;
+    
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 65%;
+    
+    --accent: 43 60% 55%;
+    --accent-foreground: 0 0% 10%;
+    
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 45 29% 97%;
+    
+    --border: 0 0% 18%;
+    --input: 0 0% 18%;
+    --ring: 15 55% 55%;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased selection:bg-primary/30 selection:text-foreground;
+    font-family: var(--font-sans);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    @apply tracking-tight;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-background/70 backdrop-blur-lg border border-border/50 shadow-sm;
+  }
+  
+  .glass-darker {
+    @apply bg-foreground/5 backdrop-blur-md border border-foreground/10;
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+}

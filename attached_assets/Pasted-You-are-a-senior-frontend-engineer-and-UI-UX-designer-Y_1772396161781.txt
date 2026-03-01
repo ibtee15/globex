@@ -1,0 +1,103 @@
+You are a senior frontend engineer and UI/UX designer.
+Your task is to build a COMPLETE, production-ready, modern ONE-PAGE restaurant website.
+REFERENCE WEBSITE:
+Use this website as structural inspiration (not visual copying):
+https://globexssh.com/
+IMPORTANT:
+The reference site is a single-page scrolling layout. You must:
+- Keep the one-page structure
+- Significantly modernize the design
+- Transform the content into a restaurant/food business context
+- Improve UI/UX to a premium modern standard
+--------------------------------
+CORE REQUIREMENTS
+--------------------------------
+✅ One-page scrolling website  
+✅ Sticky navbar with section scroll  
+✅ Highly modern and interactive  
+✅ Mobile-first responsive  
+✅ Clean, maintainable code  
+✅ SEO-friendly  
+✅ Accessible where appropriate  
+✅ Fast loading  
+--------------------------------
+TECH STACK
+--------------------------------
+- Next.js (App Router)
+- React
+- Tailwind CSS
+- No paid libraries
+- Use placeholder food images
+- Component-based architecture
+--------------------------------
+PAGE SECTIONS (ONE PAGE)
+--------------------------------
+1. Hero Section
+   - Strong food/restaurant visual
+   - Headline + CTA (Order Now / View Menu)
+2. Featured Dishes
+3. Menu / Products Section
+   ⭐ MUST INCLUDE SEARCH FEATURE
+   - Real-time search by product name
+   - Case-insensitive filtering
+   - "No results found" state
+   - Attractive food cards
+   - Category support (if possible)
+4. About the Restaurant
+5. Testimonials (optional but preferred)
+6. Contact Section
+   - Contact form
+   - Location info
+   - Opening hours
+7. Footer
+--------------------------------
+🔍 SEARCH FEATURE (IMPORTANT)
+--------------------------------
+Implement a client-side search that:
+- Filters menu items instantly
+- Works without page reload
+- Is case-insensitive
+- Has empty state UI
+- Is visually modern
+--------------------------------
+🎨 DESIGN REQUIREMENTS
+--------------------------------
+- Premium modern restaurant aesthetic
+- Sticky glassmorphism navbar
+- Smooth scrolling between sections
+- Subtle animations (hover, fade, scale)
+- Modern typography
+- Clean spacing system
+- Beautiful food cards
+- Mobile hamburger menu
+- Touch-friendly
+--------------------------------
+🗂 DATA STRUCTURE
+--------------------------------
+Create a sample menu JSON with:
+- id
+- name
+- description
+- price
+- category
+- image
+Include at least 12 sample menu items.
+--------------------------------
+✨ BONUS (if possible)
+--------------------------------
+- Category filters
+- Light/dark mode toggle
+- Micro-interactions
+- Framer Motion animations
+--------------------------------
+OUTPUT FORMAT
+--------------------------------
+1. Provide full project folder structure
+2. Provide all code files
+3. Ensure it runs with:
+   npm install
+   npm run dev
+4. Include setup instructions
+5. Code must be copy-paste ready
+IMPORTANT:
+The final result must look like a premium modern restaurant website — not a generic template.

@@ -23,7 +23,7 @@ export function AboutSection() {
               className="relative z-10 rounded-3xl overflow-hidden shadow-2xl aspect-[4/5] max-w-md mx-auto lg:mx-0"
             >
               <img
-                src="https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?q=80&w=2070&auto=format&fit=crop"
+                src="https://nnrvtradepartners.com/wp-content/uploads/2025/05/Frozen-Chicken-Breasts-1.jpg"
                 alt="GlobeX Operations"
                 className="w-full h-full object-cover"
               />

@@ -1,24 +1,75 @@
 import { useState, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Search, Package } from "lucide-react";
-import { useMenu } from "@/hooks/use-menu";
+import cpawsImg from "../../public/cpaws.png";
+import beefOmasun from "../../public/cat-omasum.png"
+import beefMeat from "../../public/cat-beaf.png"
+import cFeet from "../../public/cat-paws.png"
+import cMeat from "../../public/cat-chicken.png"
 
-const CATEGORIES = ["All", "Beef Products", "Poultry", "Seafood"];
+
+const CATEGORIES = ["All", "Beef Products", "Poultry"];
+
+// ✅ Static products from globexssh.com
+const STATIC_PRODUCTS = [
+  {
+    id: "1",
+    name: "Dry Salted Beef Omasum",
+    description:
+      "A gourmet, salt-cured delicacy celebrated for its signature crunch in traditional hot pots.",
+    category: "Beef Products",
+    image: beefOmasun,
+  },
+  {
+    id: "2",
+    name: "Chicken Paws",
+    description:
+      "Premium chicken paws, cleanly processed for rich flavor and maximum nutrition.",
+    category: "Poultry",
+    image: cpawsImg,
+  },
+  {
+    id: "3",
+    name: "Chicken Feet",
+    description:
+      "Rich, gelatin-packed chicken feet for real food lovers.",
+    category: "Poultry",
+    image: cFeet,
+  },
+  {
+    id: "4",
+    name: "Beef Meat",
+    description:
+      "The ultimate protein powerhouse for rich, hearty, and flavor-forward meals.",
+    category: "Beef Products",
+    image: beefMeat,
+  },
+  {
+    id: "5",
+    name: "Chicken Meat",
+    description:
+      "Farm-fresh chicken meat delivering tenderness, nutrition, and great taste.",
+    category: "Poultry",
+    image: cMeat,
+  },
+];
 
 export function MenuSection() {
-  const { data: menuItems, isLoading } = useMenu();
   const [searchQuery, setSearchQuery] = useState("");
   const [activeCategory, setActiveCategory] = useState("All");
 
   const filteredItems = useMemo(() => {
-    if (!menuItems) return [];
-    return menuItems.filter((item) => {
-      const matchesSearch = item.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                            item.description.toLowerCase().includes(searchQuery.toLowerCase());
-      const matchesCategory = activeCategory === "All" || item.category === activeCategory;
+    return STATIC_PRODUCTS.filter((item) => {
+      const matchesSearch =
+        item.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        item.description.toLowerCase().includes(searchQuery.toLowerCase());
+
+      const matchesCategory =
+        activeCategory === "All" || item.category === activeCategory;
+
       return matchesSearch && matchesCategory;
     });
-  }, [menuItems, searchQuery, activeCategory]);
+  }, [searchQuery, activeCategory]);
 
   return (
     <section id="menu" className="py-24 bg-secondary/30">
@@ -83,20 +134,7 @@ export function MenuSection() {
         </div>
 
         {/* Product Grid */}
-        {isLoading ? (
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-12 gap-y-8">
-            {[1, 2, 3, 4, 5, 6].map((i) => (
-              <div key={i} className="flex animate-pulse gap-4">
-                <div className="w-24 h-24 bg-muted rounded-xl shrink-0" />
-                <div className="flex-1 space-y-3 py-2">
-                  <div className="h-5 bg-muted rounded w-1/3" />
-                  <div className="h-4 bg-muted rounded w-full" />
-                  <div className="h-4 bg-muted rounded w-1/4" />
-                </div>
-              </div>
-            ))}
-          </div>
-        ) : filteredItems.length > 0 ? (
+        {filteredItems.length > 0 ? (
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-12 gap-y-10">
             <AnimatePresence mode="popLayout">
               {filteredItems.map((item) => (
@@ -145,7 +183,9 @@ export function MenuSection() {
             <div className="w-20 h-20 bg-background rounded-full flex items-center justify-center mb-6 shadow-sm border border-border">
               <Package className="w-10 h-10 text-muted-foreground" />
             </div>
-            <h3 className="text-2xl font-display font-bold text-foreground mb-2">No products found</h3>
+            <h3 className="text-2xl font-display font-bold text-foreground mb-2">
+              No products found
+            </h3>
             <p className="text-muted-foreground max-w-md">
               We couldn't find anything matching "{searchQuery}" in {activeCategory}.
               Try a different search term or category.

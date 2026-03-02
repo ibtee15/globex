@@ -25,7 +25,7 @@ export function Footer() {
           <div>
             <h4 className="font-bold text-background mb-4 uppercase tracking-wider text-sm">Our Products</h4>
             <ul className="space-y-2 text-background/60 text-sm">
-              {["Dry Salted Beef Omasum", "Chicken Paws", "Chicken Feet", "Beef Meat", "Chicken Meat", "Seafood Range"].map((p) => (
+              {["Dry Salted Beef Omasum", "Chicken Paws", "Chicken Feet", "Beef Meat", "Chicken Meat"].map((p) => (
                 <li key={p}>
                   <a href="#menu" className="hover:text-primary transition-colors">{p}</a>
                 </li>

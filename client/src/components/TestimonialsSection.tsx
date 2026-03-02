@@ -1,9 +1,11 @@
 import { motion } from "framer-motion";
-import { Star, Quote } from "lucide-react";
+import { Star, Quote, BadgeCheck } from "lucide-react";
 import { useTestimonials } from "@/hooks/use-testimonials";
 
 export function TestimonialsSection() {
   const { data: testimonials, isLoading } = useTestimonials();
+
+  const safeTestimonials = testimonials ?? [];
 
   return (
     <section id="testimonials" className="py-24 bg-card border-y border-border">
@@ -22,51 +24,76 @@ export function TestimonialsSection() {
 
         {isLoading ? (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[1, 2, 3].map((i) => (
-              <div key={i} className="animate-pulse bg-background rounded-2xl p-8 border border-border h-64" />
+            {[1, 2, 3, 4, 5, 6].map((i) => (
+              <div
+                key={i}
+                className="animate-pulse bg-background rounded-2xl p-8 border border-border h-64"
+              />
             ))}
           </div>
-        ) : (
+        ) : safeTestimonials.length > 0 ? (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {testimonials?.map((testimonial, index) => (
-              <motion.div
-                key={testimonial.id}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="bg-background rounded-3xl p-8 shadow-sm border border-border/50 relative group hover:shadow-md transition-all"
-              >
-                <Quote className="absolute top-6 right-8 w-12 h-12 text-primary/10 group-hover:text-primary/20 transition-colors" />
+            {safeTestimonials.map((testimonial, index) => {
+              const rating = Math.min(Number(testimonial.rating) || 0, 5);
 
-                <div className="flex gap-1 mb-6 text-primary">
-                  {[...Array(5)].map((_, i) => (
-                    <Star
-                      key={i}
-                      size={18}
-                      fill={i < Number(testimonial.rating) ? "currentColor" : "none"}
-                      className={i < Number(testimonial.rating) ? "" : "text-muted"}
-                    />
-                  ))}
-                </div>
+              return (
+                <motion.div
+                  key={testimonial.id ?? index}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.08 }}
+                  className="bg-background rounded-3xl p-8 shadow-sm border border-border/50 relative group hover:shadow-md transition-all flex flex-col"
+                >
+                  {/* Quote icon */}
+                  <Quote className="absolute top-6 right-8 w-12 h-12 text-primary/10 group-hover:text-primary/20 transition-colors" />
 
-                <p className="text-foreground text-lg mb-8 relative z-10 leading-relaxed italic font-display">
-                  "{testimonial.text}"
-                </p>
-
-                <div className="flex items-center gap-4 mt-auto">
-                  <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center text-primary font-bold font-display text-xl">
-                    {testimonial.name.charAt(0)}
+                  {/* Stars */}
+                  <div className="flex gap-1 mb-4 text-primary">
+                    {[...Array(5)].map((_, i) => (
+                      <Star
+                        key={i}
+                        size={18}
+                        fill={i < rating ? "currentColor" : "none"}
+                        className={i < rating ? "" : "text-muted"}
+                      />
+                    ))}
                   </div>
-                  <div>
-                    <h4 className="font-bold text-foreground">{testimonial.name}</h4>
-                    {testimonial.role && (
-                      <p className="text-sm text-muted-foreground">{testimonial.role}</p>
-                    )}
+
+                  {/* Verified badge */}
+                  <div className="flex items-center gap-2 mb-4 text-xs text-primary font-medium">
+                    <BadgeCheck size={16} />
+                    Verified International Buyer
                   </div>
-                </div>
-              </motion.div>
-            ))}
+
+                  {/* Review text */}
+                  <p className="text-foreground text-lg mb-8 relative z-10 leading-relaxed italic font-display flex-grow">
+                    "{testimonial.text}"
+                  </p>
+
+                  {/* Footer */}
+                  <div className="flex items-center gap-4 mt-auto">
+                    <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center text-primary font-bold font-display text-xl">
+                      {(testimonial.name || "A").charAt(0)}
+                    </div>
+                    <div>
+                      <h4 className="font-bold text-foreground">
+                        {testimonial.name || "Anonymous Buyer"}
+                      </h4>
+                      {testimonial.role && (
+                        <p className="text-sm text-muted-foreground">
+                          {testimonial.role}
+                        </p>
+                      )}
+                    </div>
+                  </div>
+                </motion.div>
+              );
+            })}
+          </div>
+        ) : (
+          <div className="text-center text-muted-foreground py-12">
+            No testimonials available yet.
           </div>
         )}
       </div>

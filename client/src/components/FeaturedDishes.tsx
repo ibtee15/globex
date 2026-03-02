@@ -1,25 +1,31 @@
 import { motion } from "framer-motion";
+import cpawsImg from "../../public/cpaws.png";
+import beefOmasun from "../../public/cat-omasum.png"
+import beefMeat from "../../public/cat-beaf.png"
 
 const FEATURED_PRODUCTS = [
   {
     id: 1,
     name: "Dry Salted Beef Omasum",
-    description: "A premium salt-cured delicacy made from beef omasum (bible tripe), celebrated for its signature crunch and umami depth. Perfect for traditional hot pots, soups, and gourmet preparations across Asian and global markets.",
-    image: "https://images.unsplash.com/photo-1529692236671-f1f6cf9683ba?q=80&w=2070&auto=format&fit=crop",
+    description:
+      "A premium salt-cured delicacy made from beef omasum (bible tripe), celebrated for its signature crunch and umami depth. Perfect for traditional hot pots, soups, and gourmet preparations across Asian and global markets.",
+    image: beefOmasun,
     tag: "Flagship Product",
   },
   {
     id: 2,
     name: "Chicken Paws",
-    description: "Premium-grade chicken paws, meticulously cleaned and processed to meet international export standards. Prized in Southeast Asian, Chinese, and African markets for their rich collagen content and versatile culinary uses.",
-    image: "https://images.unsplash.com/photo-1587593810167-a84920ea0781?q=80&w=2070&auto=format&fit=crop",
+    description:
+      "Premium-grade chicken paws, meticulously cleaned and processed to meet international export standards. Prized in Southeast Asian, Chinese, and African markets for their rich collagen content and versatile culinary uses.",
+    image: cpawsImg,
     tag: "High Demand",
   },
   {
     id: 3,
     name: "Beef Meat",
-    description: "The ultimate protein powerhouse. Our beef cuts are sourced from quality-certified facilities, processed under strict halal and export compliance standards, and delivered frozen to preserve maximum freshness.",
-    image: "https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=2069&auto=format&fit=crop",
+    description:
+      "The ultimate protein powerhouse. Our beef cuts are sourced from quality-certified facilities, processed under strict halal and export compliance standards, and delivered frozen to preserve maximum freshness.",
+    image: beefMeat,
     tag: "Premium Cut",
   },
 ];
@@ -58,7 +64,8 @@ export function FeaturedDishes() {
             transition={{ delay: 0.2 }}
             className="text-muted-foreground max-w-2xl mx-auto mt-6 text-lg"
           >
-            Premium quality beef omasum and frozen poultry, sourced with integrity and exported with reliability.
+            Premium quality beef omasum and frozen poultry, sourced with
+            integrity and exported with reliability.
           </motion.p>
         </div>
 

@@ -140,8 +140,8 @@ async function seedDatabase() {
       // ✅ NEW — UAE / Middle East
       {
         name: "Faisal Al-Harbi",
-        role: "Senior Buyer, Riyadh",
-        text: "Our experience with GlobeX has been excellent. The product quality is consistent and their logistics team ensures timely shipments to Saudi Arabia. We look forward to expanding our volumes together.",
+        role: "Senior Buyer, China",
+        text: "Our experience with GlobeX has been excellent. The product quality is consistent and their logistics team ensures timely shipments to China. We look forward to expanding our volumes together.",
         rating: "5",
       },
 
@@ -156,7 +156,7 @@ async function seedDatabase() {
       // ✅ NEW — Southeast Asia
       {
         name: "Nguyen Minh Foods",
-        role: "Purchasing Director, Ho Chi Minh City",
+        role: "Purchasing Director, Hong Kong",
         text: "We appreciate GlobeX for their reliable supply of frozen poultry. Quality inspection reports and documentation are always clear, which makes our import process smooth and efficient.",
         rating: "5",
       },

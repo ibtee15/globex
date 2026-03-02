@@ -39,11 +39,7 @@ export function Footer() {
             <ul className="space-y-3 text-background/60 text-sm">
               <li>+92 300 8248913</li>
               <li>021-34313377 / 021-34313660</li>
-              <li><a href="mailto:sjabbarr@gmail.com">sjabbarr@gmail.com</a></li>
               <li><a href="mailto:sales@globexssh.com">sales@globexssh.com</a></li>
-              <li><a href="mailto:samad@globexssh.com">samad@globexssh.com</a></li>
-              <li><a href="mailto:shahab@globexssh.com">shahab@globexssh.com</a></li>
-              <li><a href="mailto:ceo@globexssh.com">ceo@globexssh.com</a></li>
               <li className="pt-1">Karachi, Pakistan</li>
             </ul>
           </div>

@@ -101,7 +101,7 @@ ${message}`
                 <div>
                   <h4 className="text-lg font-bold text-foreground mb-1">Email</h4>
                   <div className="flex flex-col gap-1 text-muted-foreground">
-                    {["sales@globexssh.com","samad@globexssh.com","shahab@globexssh.com","ceo@globexssh.com","sjabbarr@gmail.com"].map((em) => (
+                    {["sales@globexssh.com"].map((em) => (
                       <a key={em} href={`mailto:${em}`} className="hover:text-primary transition-colors">{em}</a>
                     ))}
                   </div>

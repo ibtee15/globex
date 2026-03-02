@@ -26,7 +26,7 @@ const STATIC_PRODUCTS = [
     description:
       "Premium chicken paws, cleanly processed for rich flavor and maximum nutrition.",
     category: "Poultry",
-    image: cpawsImg,
+    image: cFeet,
   },
   {
     id: "3",
@@ -34,7 +34,7 @@ const STATIC_PRODUCTS = [
     description:
       "Rich, gelatin-packed chicken feet for real food lovers.",
     category: "Poultry",
-    image: cFeet,
+    image: cpawsImg,
   },
   {
     id: "4",

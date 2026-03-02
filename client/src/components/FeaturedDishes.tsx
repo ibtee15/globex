@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import cpawsImg from "../../public/cpaws.png";
+import cpawsImg from "../../public/cat-paws.png";
 import beefOmasun from "../../public/cat-omasum.png"
 import beefMeat from "../../public/cat-beaf.png"
 

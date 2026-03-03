@@ -118,49 +118,49 @@ async function seedDatabase() {
   const existingTestimonials = await storage.getTestimonials();
   if (existingTestimonials.length === 0) {
     const initialTestimonials = [
-      {
-        name: "Ahmed Al-Rashid",
-        role: "Import Director, Gulf Foods LLC",
-        text: "GlobeX has been our go-to supplier for beef omasum for over three years. Their consistency in quality grading and on-time shipments have made them an indispensable partner for our business.",
-        rating: "5",
-      },
-      {
-        name: "Li Wei Trading Co.",
-        role: "Procurement Manager, Guangzhou",
-        text: "The chicken paws from GlobeX meet our strict specifications every single time. Their export documentation is always complete and their team responds quickly. Highly reliable supplier from Pakistan.",
-        rating: "5",
-      },
-      {
-        name: "Emmanuel Okonkwo",
-        role: "Food Distributor, Lagos Nigeria",
-        text: "We've sourced frozen poultry from multiple countries, but GlobeX stands out for competitive pricing and genuine quality compliance. Their halal certification is recognized and trusted in our market.",
-        rating: "5",
-      },
+    {
+      name: "Ahmed Al-Rashid",
+      role: "Import Director, Gulf Foods LLC",
+      text: "GlobeX has been our go-to supplier for beef omasum for over three years. Their consistency in quality grading and on-time shipments have made them an indispensable partner for our business.",
+      rating: "5",
+    },
+    {
+      name: "Li Wei Trading Co.",
+      role: "Procurement Manager, Guangzhou",
+      text: "The dry salted beef omasum from GlobeX consistently meets our import specifications for the Chinese hot pot market. Texture, cleanliness, and moisture levels are always well controlled. A very dependable supplier.",
+      rating: "5",
+    },
+    {
+      name: "Emmanuel Okonkwo",
+      role: "Food Distributor, Lagos Nigeria",
+      text: "We've sourced frozen poultry from multiple countries, but GlobeX stands out for competitive pricing and genuine quality compliance. Their halal certification is recognized and trusted in our market.",
+      rating: "5",
+    },
 
-      // ✅ NEW — UAE / Middle East
-      {
-        name: "Faisal Al-Harbi",
-        role: "Senior Buyer, China",
-        text: "Our experience with GlobeX has been excellent. The product quality is consistent and their logistics team ensures timely shipments to China. We look forward to expanding our volumes together.",
-        rating: "5",
-      },
+    // ✅ UPDATED — China focused on omasum
+    {
+      name: "Faisal Al-Harbi",
+      role: "Senior Buyer, China",
+      text: "We primarily import dry salted beef omasum from GlobeX for distribution in northern China. The cut quality and salt curing are very consistent, and shipments arrive exactly as specified in our contracts.",
+      rating: "5",
+    },
 
-      // ✅ NEW — East Africa
-      {
-        name: "Joseph Mwangi",
-        role: "Import Manager, Nairobi",
-        text: "GlobeX understands the African market requirements very well. Their chicken feet and leg quarters arrive well-packed and within agreed timelines. Communication throughout the order cycle is very professional.",
-        rating: "5",
-      },
+    // ✅ unchanged — Africa poultry focus
+    {
+      name: "Joseph Mwangi",
+      role: "Import Manager, Nairobi",
+      text: "GlobeX understands the African market requirements very well. Their chicken feet and leg quarters arrive well-packed and within agreed timelines. Communication throughout the order cycle is very professional.",
+      rating: "5",
+    },
 
-      // ✅ NEW — Southeast Asia
-      {
-        name: "Nguyen Minh Foods",
-        role: "Purchasing Director, Hong Kong",
-        text: "We appreciate GlobeX for their reliable supply of frozen poultry. Quality inspection reports and documentation are always clear, which makes our import process smooth and efficient.",
-        rating: "5",
-      },
-    ];
+    // ✅ UPDATED — Hong Kong focused on omasum
+    {
+      name: "Nguyen Minh Foods",
+      role: "Purchasing Director, Hong Kong",
+      text: "Our buyers in Hong Kong are very satisfied with GlobeX dry salted beef omasum. The product has excellent crunch after rehydration and performs well in hot pot applications. Documentation and packing are always in order.",
+      rating: "5",
+    },
+  ];
 
     for (const testimonial of initialTestimonials) {
       await storage.createTestimonial(testimonial);

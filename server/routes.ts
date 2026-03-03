@@ -139,7 +139,7 @@ async function seedDatabase() {
 
     // ✅ UPDATED — China focused on omasum
     {
-      name: "Faisal Al-Harbi",
+      name: "Zhang Minghao (张明浩)",
       role: "Senior Buyer, China",
       text: "We primarily import dry salted beef omasum from GlobeX for distribution in northern China. The cut quality and salt curing are very consistent, and shipments arrive exactly as specified in our contracts.",
       rating: "5",
@@ -155,7 +155,7 @@ async function seedDatabase() {
 
     // ✅ UPDATED — Hong Kong focused on omasum
     {
-      name: "Nguyen Minh Foods",
+      name: "Michael Wong (黄志强)",
       role: "Purchasing Director, Hong Kong",
       text: "Our buyers in Hong Kong are very satisfied with GlobeX dry salted beef omasum. The product has excellent crunch after rehydration and performs well in hot pot applications. Documentation and packing are always in order.",
       rating: "5",
